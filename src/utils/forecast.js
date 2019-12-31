@@ -10,7 +10,7 @@ const forecast = (latitude, longitude, callback) =>{
             callback('Unable to find location. Try again', undefined)
         }else {
             callback(undefined, 'We are in timezone ' + body.timezone + '. ' + body.daily.data[0].summary + ' At the moment its ' + body.currently.temperature + 
-            ' degrees and theres ' + body.currently.precipProbability + ' chance of rain')
+            ' degrees and theres ' + body.currently.precipProbability + ' chance of rain. ' + 'Current wind speed is ' + body.daily.data[0].windSpeed + '. Ozon: ' + body.daily.data[0].ozone)
         }
     })
 }
